@@ -1,6 +1,7 @@
 package com.hc.mapper;
 
 import com.hc.entity.Account;
+import com.hc.entity.vo.AccountUser;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -18,6 +19,8 @@ public interface AccountMapper {
      * @return
      */
     Account findAccountByNameOrEmail(String text);
+
+    AccountUser findAccountUserByNameOrEmail(String text);
 
     /**
      * 新注册用户

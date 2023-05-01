@@ -54,13 +54,10 @@ public class AuthorizeServiceImpl implements AuthorizedService {
         if (username == null) {
             throw new UsernameNotFoundException("用户名不能为空！");
         }
-
         Account account = accountMapper.findAccountByNameOrEmail(username);
-
         if (account == null) {
             throw new UsernameNotFoundException("用户名或密码错误！");
         }
-
         return User
                 .withUsername(account.getUsername())
                 .password(account.getPassword())

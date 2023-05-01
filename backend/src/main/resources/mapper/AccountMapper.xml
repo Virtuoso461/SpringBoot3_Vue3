@@ -20,4 +20,11 @@
            or email = #{text}
     </select>
 
+    <select id="findAccountUserByNameOrEmail" resultType="com.hc.entity.vo.AccountUser">
+        select *
+        from db_account
+        where username = #{text}
+           or email = #{text}
+    </select>
+
 </mapper>
